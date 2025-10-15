@@ -1,0 +1,79 @@
+.burger-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.bun {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 50% / 30%;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  margin-bottom: 2px;
+}
+
+.top-bun {
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+.bottom-bun {
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
+  margin-top: 2px;
+}
+
+.fillings-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.filling-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  overflow: hidden;
+
+  /* slide-in animation */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slide-in 0.3s forwards;
+  transition: all 0.3s ease;
+}
+
+.filling-item.removing {
+  opacity: 0;
+  transform: scaleY(0) translateY(-20px);
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-fillings {
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  border: 1px dashed #aaa;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: #fff;
+}
